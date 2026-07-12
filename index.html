@@ -80,6 +80,17 @@
           <p class="task-description">Wykonaj zaplanowane prace na terenie budynku. Po rozpoczęciu zadania jego status zostanie zaktualizowany.</p>
           <div class="task-status"><span>Status</span><strong>Do wykonania</strong></div>
           <button class="start-task-button" type="button">Realizuj</button>
+          <section class="before-photo" hidden aria-labelledby="photo-title">
+            <h2 id="photo-title">Zdjęcie przed realizacją</h2>
+            <p>Wykonaj zdjęcie dokumentujące stan przed rozpoczęciem pracy.</p>
+            <label class="camera-upload" for="before-photo-input">
+              <span class="camera-icon" aria-hidden="true">⌾</span>
+              <span>Otwórz aparat / dodaj zdjęcie</span>
+              <input id="before-photo-input" type="file" accept="image/*" capture="environment" />
+            </label>
+            <img class="photo-preview" alt="Podgląd zdjęcia przed realizacją" hidden />
+            <button class="confirm-task-button" type="button" disabled>Rozpocznij realizację</button>
+          </section>
         </div>
       </section>
     </main>
