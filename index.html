@@ -49,15 +49,15 @@
           <div class="building-list" role="list">
             <article class="building-card" role="listitem">
               <button class="building-option" type="button" aria-expanded="false"><span class="building-icon">⌂</span><span><strong>Osiedle Słoneczne</strong><small>ul. Słoneczna 12, Warszawa</small></span><em class="task-count">3 zadania</em><b>⌄</b></button>
-              <ul class="task-list" hidden><li class="task-row"><span><strong>Koszenie trawy</strong><small>Do wykonania</small></span><button type="button" class="choose-task">Wybierz</button></li><li class="task-row"><span><strong>Oprysk</strong><small>Zaplanowane</small></span><button type="button" class="choose-task">Wybierz</button></li><li class="task-row"><span><strong>Sprzątanie klatki</strong><small>Do wykonania</small></span><button type="button" class="choose-task">Wybierz</button></li></ul>
+              <ul class="task-list" hidden><li class="task-row"><span><strong>Koszenie trawy</strong><small class="status-todo">Do wykonania</small></span><button type="button" class="choose-task">Wybierz</button></li><li class="task-row"><span><strong>Oprysk</strong><small class="status-progress">W realizacji</small></span></li><li class="task-row"><span><strong>Sprzątanie klatki</strong><small class="status-done">Zakończono</small></span></li></ul>
             </article>
             <article class="building-card" role="listitem">
               <button class="building-option" type="button" aria-expanded="false"><span class="building-icon">⌂</span><span><strong>Willa Parkowa</strong><small>ul. Parkowa 8, Warszawa</small></span><em class="task-count">3 zadania</em><b>⌄</b></button>
-              <ul class="task-list" hidden><li class="task-row"><span><strong>Koszenie trawy</strong><small>Do wykonania</small></span><button type="button" class="choose-task">Wybierz</button></li><li class="task-row"><span><strong>Oprysk</strong><small>Zaplanowane</small></span><button type="button" class="choose-task">Wybierz</button></li><li class="task-row"><span><strong>Sprzątanie klatki</strong><small>Do wykonania</small></span><button type="button" class="choose-task">Wybierz</button></li></ul>
+              <ul class="task-list" hidden><li class="task-row"><span><strong>Koszenie trawy</strong><small class="status-todo">Do wykonania</small></span><button type="button" class="choose-task">Wybierz</button></li><li class="task-row"><span><strong>Oprysk</strong><small class="status-progress">W realizacji</small></span></li><li class="task-row"><span><strong>Sprzątanie klatki</strong><small class="status-done">Zakończono</small></span></li></ul>
             </article>
             <article class="building-card" role="listitem">
               <button class="building-option" type="button" aria-expanded="false"><span class="building-icon">⌂</span><span><strong>Centrum Biznesowe</strong><small>al. Jana Pawła II 25, Warszawa</small></span><em class="task-count">3 zadania</em><b>⌄</b></button>
-              <ul class="task-list" hidden><li class="task-row"><span><strong>Koszenie trawy</strong><small>Do wykonania</small></span><button type="button" class="choose-task">Wybierz</button></li><li class="task-row"><span><strong>Oprysk</strong><small>Zaplanowane</small></span><button type="button" class="choose-task">Wybierz</button></li><li class="task-row"><span><strong>Sprzątanie klatki</strong><small>Do wykonania</small></span><button type="button" class="choose-task">Wybierz</button></li></ul>
+              <ul class="task-list" hidden><li class="task-row"><span><strong>Koszenie trawy</strong><small class="status-todo">Do wykonania</small></span><button type="button" class="choose-task">Wybierz</button></li><li class="task-row"><span><strong>Oprysk</strong><small class="status-progress">W realizacji</small></span></li><li class="task-row"><span><strong>Sprzątanie klatki</strong><small class="status-done">Zakończono</small></span></li></ul>
             </article>
           </div>
         </div>
@@ -89,8 +89,85 @@
               <input id="before-photo-input" type="file" accept="image/*" capture="environment" />
             </label>
             <img class="photo-preview" alt="Podgląd zdjęcia przed realizacją" hidden />
-            <button class="confirm-task-button" type="button" disabled>Rozpocznij realizację</button>
           </section>
+        </div>
+      </section>
+
+      <section class="in-progress-view" hidden aria-labelledby="progress-title">
+        <header class="app-header">
+          <div class="user-profile" aria-label="Zalogowany użytkownik: Adam Lewandowski">
+            <span class="user-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M19 21v-2a5 5 0 0 0-5-5H10a5 5 0 0 0-5 5v2M12 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /></svg>
+            </span>
+            <span>Adam Lewandowski</span>
+          </div>
+          <button class="logout-button" type="button">Wyloguj</button>
+        </header>
+        <div class="progress-content">
+          <p class="task-label">AKTYWNE ZADANIE</p>
+          <h1 id="progress-title">Zadanie w realizacji</h1>
+          <div class="progress-card">
+            <strong class="progress-task-name">Koszenie trawy</strong>
+            <dl>
+              <div><dt>Budynek</dt><dd class="progress-building">Osiedle Słoneczne</dd></div>
+              <div><dt>Data i czas</dt><dd class="progress-date"></dd></div>
+              <div><dt>Opis</dt><dd class="progress-description">Wykonaj zaplanowane prace na terenie budynku.</dd></div>
+            </dl>
+          </div>
+          <button class="notes-button" type="button">Dodaj uwagi</button>
+          <textarea class="notes-input" hidden placeholder="Wpisz uwagi do zadania..."></textarea>
+          <button class="finish-task-button" type="button">Zakończ zadanie</button>
+        </div>
+      </section>
+
+      <section class="after-photo-view" hidden aria-labelledby="after-photo-title">
+        <header class="app-header">
+          <div class="user-profile" aria-label="Zalogowany użytkownik: Adam Lewandowski">
+            <span class="user-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M19 21v-2a5 5 0 0 0-5-5H10a5 5 0 0 0-5 5v2M12 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /></svg>
+            </span>
+            <span>Adam Lewandowski</span>
+          </div>
+          <button class="logout-button" type="button">Wyloguj</button>
+        </header>
+        <div class="after-photo-content">
+          <p class="task-label">ZAKOŃCZENIE ZADANIA</p>
+          <h1 id="after-photo-title">Zdjęcie po realizacji</h1>
+          <p class="after-photo-copy">Dodaj zdjęcie potwierdzające wykonanie zadania.</p>
+          <label class="camera-upload after-camera" for="after-photo-input">
+            <span class="camera-icon" aria-hidden="true">⌾</span>
+            <span>Otwórz aparat / dodaj zdjęcie</span>
+            <input id="after-photo-input" type="file" accept="image/*" capture="environment" />
+          </label>
+          <img class="after-photo-preview" alt="Podgląd zdjęcia po realizacji" hidden />
+          <button class="complete-task-button" type="button" disabled>Dodaj zdjęcie</button>
+        </div>
+      </section>
+
+      <section class="completed-view" hidden aria-labelledby="completed-title">
+        <header class="app-header">
+          <div class="user-profile" aria-label="Zalogowany użytkownik: Adam Lewandowski">
+            <span class="user-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M19 21v-2a5 5 0 0 0-5-5H10a5 5 0 0 0-5 5v2M12 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /></svg>
+            </span>
+            <span>Adam Lewandowski</span>
+          </div>
+          <button class="logout-button" type="button">Wyloguj</button>
+        </header>
+        <div class="completed-content">
+          <p class="task-label">PODSUMOWANIE</p>
+          <h1 id="completed-title">Zadanie zrealizowane</h1>
+          <dl class="summary-list">
+            <div><dt>Budynek</dt><dd class="summary-building"></dd></div>
+            <div><dt>Zadanie</dt><dd class="summary-task"></dd></div>
+            <div><dt>Data / czas rozpoczęcia</dt><dd class="summary-start"></dd></div>
+            <div><dt>Zdjęcie przed</dt><dd><img class="summary-before-photo" alt="Zdjęcie przed realizacją" /></dd></div>
+            <div><dt>Data / czas zakończenia</dt><dd class="summary-end"></dd></div>
+            <div><dt>Czas wykonania zadania</dt><dd class="summary-duration"></dd></div>
+            <div><dt>Uwagi</dt><dd class="summary-notes">Brak uwag.</dd></div>
+            <div><dt>Zdjęcie po realizacji</dt><dd><img class="summary-after-photo" alt="Zdjęcie po realizacji" /></dd></div>
+          </dl>
+          <button class="close-summary-button" type="button">Zakończ</button>
         </div>
       </section>
     </main>
