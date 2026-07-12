@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logowanie</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="login-card">
+      <section class="login-view" aria-labelledby="page-title">
+        <img class="brand-mark" src="logo.jpg" alt="Logo systemu" />
+
+        <h1 id="page-title">Logowanie</h1>
+        <p class="intro">Zaloguj się do systemu zarządzania budynkami.</p>
+
+        <form class="login-form">
+        <label class="field">
+          <span class="sr-only">Login</span>
+          <input type="text" name="login" placeholder="Wpisz login" autocomplete="username" required />
+          <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21v-2a5 5 0 0 0-5-5H10a5 5 0 0 0-5 5v2M12 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /></svg>
+        </label>
+        <label class="field">
+          <span class="sr-only">Hasło</span>
+          <input id="password" type="password" name="password" placeholder="Wpisz hasło" autocomplete="current-password" required />
+          <button class="visibility-toggle" type="button" aria-label="Pokaż hasło" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" /><circle cx="12" cy="12" r="3" /></svg>
+          </button>
+        </label>
+          <button class="submit-button" type="submit">Zaloguj</button>
+          <p class="login-error" role="alert" hidden>Nieprawidłowy login lub hasło.</p>
+        </form>
+
+        <p class="footer-text">System obsługi technicznej i sprzątania budynków</p>
+      </section>
+
+      <section class="buildings-view" hidden aria-labelledby="buildings-title">
+        <header class="app-header">
+          <div class="user-profile" aria-label="Zalogowany użytkownik: Adam">
+            <span class="user-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M19 21v-2a5 5 0 0 0-5-5H10a5 5 0 0 0-5 5v2M12 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /></svg>
+            </span>
+            <span>Adam Lewandowski</span>
+          </div>
+          <button class="logout-button" type="button">Wyloguj</button>
+        </header>
+        <div class="buildings-content">
+          <p id="buildings-title" class="intro">Wybierz budynek, którym chcesz zarządzać.</p>
+          <div class="building-list" role="list">
+            <article class="building-card" role="listitem">
+              <button class="building-option" type="button" aria-expanded="false"><span class="building-icon">⌂</span><span><strong>Osiedle Słoneczne</strong><small>ul. Słoneczna 12, Warszawa</small></span><em class="task-count">3 zadania</em><b>⌄</b></button>
+              <ul class="task-list" hidden><li class="task-row"><span><strong>Koszenie trawy</strong><small>Do wykonania</small></span><button type="button" class="choose-task">Wybierz</button></li><li class="task-row"><span><strong>Oprysk</strong><small>Zaplanowane</small></span><button type="button" class="choose-task">Wybierz</button></li><li class="task-row"><span><strong>Sprzątanie klatki</strong><small>Do wykonania</small></span><button type="button" class="choose-task">Wybierz</button></li></ul>
+            </article>
+            <article class="building-card" role="listitem">
+              <button class="building-option" type="button" aria-expanded="false"><span class="building-icon">⌂</span><span><strong>Willa Parkowa</strong><small>ul. Parkowa 8, Warszawa</small></span><em class="task-count">3 zadania</em><b>⌄</b></button>
+              <ul class="task-list" hidden><li class="task-row"><span><strong>Koszenie trawy</strong><small>Do wykonania</small></span><button type="button" class="choose-task">Wybierz</button></li><li class="task-row"><span><strong>Oprysk</strong><small>Zaplanowane</small></span><button type="button" class="choose-task">Wybierz</button></li><li class="task-row"><span><strong>Sprzątanie klatki</strong><small>Do wykonania</small></span><button type="button" class="choose-task">Wybierz</button></li></ul>
+            </article>
+            <article class="building-card" role="listitem">
+              <button class="building-option" type="button" aria-expanded="false"><span class="building-icon">⌂</span><span><strong>Centrum Biznesowe</strong><small>al. Jana Pawła II 25, Warszawa</small></span><em class="task-count">3 zadania</em><b>⌄</b></button>
+              <ul class="task-list" hidden><li class="task-row"><span><strong>Koszenie trawy</strong><small>Do wykonania</small></span><button type="button" class="choose-task">Wybierz</button></li><li class="task-row"><span><strong>Oprysk</strong><small>Zaplanowane</small></span><button type="button" class="choose-task">Wybierz</button></li><li class="task-row"><span><strong>Sprzątanie klatki</strong><small>Do wykonania</small></span><button type="button" class="choose-task">Wybierz</button></li></ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="task-details-view" hidden aria-labelledby="task-title">
+        <header class="app-header">
+          <div class="user-profile" aria-label="Zalogowany użytkownik: Adam Lewandowski">
+            <span class="user-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M19 21v-2a5 5 0 0 0-5-5H10a5 5 0 0 0-5 5v2M12 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /></svg>
+            </span>
+            <span>Adam Lewandowski</span>
+          </div>
+          <button class="logout-button" type="button">Wyloguj</button>
+        </header>
+        <div class="task-details-content">
+          <button class="return-button" type="button">← Wróć do zadań</button>
+          <p class="task-label">WYBRANE ZADANIE</p>
+          <h1 id="task-title">Koszenie trawy</h1>
+          <p class="task-description">Wykonaj zaplanowane prace na terenie budynku. Po rozpoczęciu zadania jego status zostanie zaktualizowany.</p>
+          <div class="task-status"><span>Status</span><strong>Do wykonania</strong></div>
+          <button class="start-task-button" type="button">Realizuj</button>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
